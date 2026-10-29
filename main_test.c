@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: callwood <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,8 +12,8 @@
 
 #include "ft_printf.h"
 
-int main(void)
+int	main(void)
 {
-    ft_printf("Hello %s %d !\n", "World", 42);
-    return (0);
+	ft_printf("Hello %s %d !\n", "World", 42);
+	return (0);
 }

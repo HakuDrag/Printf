@@ -6,7 +6,7 @@
 /*   By: callwood <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 14:28:17 by callwood          #+#    #+#             */
-/*   Updated: 2026/10/28 14:28:20 by callwood         ###   ########.fr       */
+/*   Updated: 2026/10/29 15:22:52 by callwood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ int	ft_printnbr(va_list args)
 {
 	long	n;
 	int		count;
-	
+
 	n = (long)va_arg(args, int);
 	count = 0;
-
 	if (n < 0)
 	{
 		count += write(1, "-", 1);

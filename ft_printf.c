@@ -24,7 +24,9 @@ int	ft_printformat(va_list args, const char format)
 	else if (format == 'd' || format == 'i')
 		count += ft_printnbr(args);
 	else if (format == 'p')
-		count += ft_printnbr(args); 
+		count += ft_printptr(args);
+	else if (format == 'u')
+		count += ft_printunsigned(args);	
 	return (count);
 }
 
