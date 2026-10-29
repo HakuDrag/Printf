@@ -18,7 +18,7 @@ int ft_unsignedcount(unsigned int n)
 
     count = 0;
     if (n >= 10)
-        count +=ft_printunsigned(n / 10);
+        count += ft_printunsigned(n / 10);
     count += write(1, (n % 10) + '0', 1);
     return (count);
 }
