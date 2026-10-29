@@ -23,6 +23,8 @@ int	ft_printchar(va_list args);
 int	ft_printnbr(va_list args);
 int	ft_printptr(va_list args);
 int ft_printunsigned(va_list args);
+int	ft_printhex(va_list args, int uppercase);
 int	ft_printf(const char *format, ...);
+
 
 #endif

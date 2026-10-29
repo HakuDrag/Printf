@@ -26,7 +26,16 @@ int	ft_printformat(va_list args, const char format)
 	else if (format == 'p')
 		count += ft_printptr(args);
 	else if (format == 'u')
-		count += ft_printunsigned(args);	
+		count += ft_printunsigned(args);
+	else if (format == 'x')
+		count = ft_printhex(args, 0);
+	else if (format == 'X')
+		count = ft_printhex(args, 1);
+	else if (format == '%')
+	{
+		ft_putchar_fd('%', 1);
+		count = 1;
+	}
 	return (count);
 }
 
