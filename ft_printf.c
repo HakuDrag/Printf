@@ -12,25 +12,45 @@
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printformat(va_list args, const char format)
 {
-    int     i;
-    va_list args;
+	int	count;
 
-    i = 0;
-    va_start(args, format);
-    while (format[i])
-    {
-        if (format[i] == '%')
-        {
-            if (format[++i] == 'c')
-            {
-                i++;
-                ft_printchar(args);            }
-        }
-        else
-            write(1, &format[i], 1);
-        
-    }
-    
+	count = 0;
+	if (format == 'c')
+		count += ft_printchar(args);
+	else if (format == 's')
+		count += ft_printstr(args);
+	else if (format == 'd' || format == 'i')
+		count += ft_printnbr(args);
+	else if (format == 'p')
+		count += ft_printnbr(args); 
+	return (count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	int		i;
+	int		count;
+	va_list	args;
+
+	i = 0;
+	count = 0;
+	va_start(args, format);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			if (format[++i])
+				count += ft_printformat(args, format[i]);
+		}
+		else
+		{
+			ft_putchar_fd(format[i], 1);
+			count++;
+		}
+		i++;
+	}
+	va_end(args);
+	return (count);
 }

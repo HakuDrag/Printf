@@ -14,9 +14,14 @@
 # define FT_PRINTF_H
 
 # include "libft.h"
-# include <unistd.h>
 # include <stdarg.h>
+# include <unistd.h>
 
-void ft_printchar(va_list args);
+int	ft_printchar(va_list args);
+int	ft_printstr(va_list args);
+int	ft_printchar(va_list args);
+int	ft_printnbr(va_list args);
+int	ft_printptr(va_list args);
+int	ft_printf(const char *format, ...);
 
 #endif
