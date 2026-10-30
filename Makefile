@@ -24,7 +24,8 @@ SRCS        = ft_printf.c \
               ft_printchar.c \
               ft_printnbr.c \
 			  ft_printptr.c \
-			  ft_printunsigned.c
+			  ft_printunsigned.c \
+			  ft_printhex.c
 
 OBJS        = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 

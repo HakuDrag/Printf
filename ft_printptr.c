@@ -6,7 +6,7 @@
 /*   By: callwood <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 15:03:52 by callwood          #+#    #+#             */
-/*   Updated: 2026/10/29 15:03:59 by callwood         ###   ########.fr       */
+/*   Updated: 2026/10/30 10:42:04 by callwood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_printptr(va_list args)
 		ft_putstr_fd("(nil)", 1);
 		return (5);
 	}
-	count += ft_printstrlen("0x", 1);
+	count += ft_printstrlenfd("0x", 1);
 	count += ft_hexcount((unsigned long)ptr);
 	return (count);
 }

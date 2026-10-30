@@ -12,21 +12,21 @@
 
 #include "ft_printf.h"
 
-int ft_unsignedcount(unsigned int n)
+int	ft_unsignedcount(unsigned int n)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    if (n >= 10)
-        count += ft_printunsigned(n / 10);
-    count += write(1, (n % 10) + '0', 1);
-    return (count);
+	count = 0;
+	if (n >= 10)
+		count += ft_printunsigned(n / 10);
+	count += write(1, (n % 10) + '0', 1);
+	return (count);
 }
 
-int ft_printunsigned(va_list args)
+int	ft_printunsigned(va_list args)
 {
-    unsigned int n;
+	unsigned int	n;
 
-    n = va_arg(args, unsigned int);
-    return (ft_unsignedcount(n));
+	n = va_arg(args, unsigned int);
+	return (ft_unsignedcount(n));
 }
