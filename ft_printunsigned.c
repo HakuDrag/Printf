@@ -14,12 +14,16 @@
 
 int	ft_unsignedcount(unsigned int n)
 {
-	int	count;
+	int		count;
+	char	c;
 
 	count = 0;
 	if (n >= 10)
-		count += ft_printunsigned(n / 10);
-	count += write(1, (n % 10) + '0', 1);
+	{
+		count += ft_unsignedcount(n / 10);
+	}
+	c = (n % 10) + '0';
+	count += write(1, &c, 1);
 	return (count);
 }
 

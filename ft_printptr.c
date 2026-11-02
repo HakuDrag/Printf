@@ -12,20 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_printstrlenfd(char *str, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar_fd(str[i], fd);
-		i++;
-	}
-	return (i);
-}
-
-int	ft_hexcount(unsigned long n)
+static int	ft_hexcount(unsigned long n)
 {
 	int		count;
 	char	*hex;
@@ -46,11 +33,9 @@ int	ft_printptr(va_list args)
 	ptr = va_arg(args, void *);
 	count = 0;
 	if (!ptr)
-	{
-		ft_putstr_fd("(nil)", 1);
-		return (5);
-	}
-	count += ft_printstrlenfd("0x", 1);
+		return (write(1, "(nil)", 5));
+	ft_putstr_fd("0x", 1);
+	count += 2;
 	count += ft_hexcount((unsigned long)ptr);
 	return (count);
 }

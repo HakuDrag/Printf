@@ -24,7 +24,8 @@ int	ft_hexcount(unsigned int n, int uppercase)
 		base = "0123456789abcdef";
 	if (n >= 16)
 		count += ft_hexcount(n / 16, uppercase);
-	count += ft_putchar_fd(base[n % 16], 1);
+	ft_putchar_fd(base[n % 16], 1);
+	count++;
 	return (count);
 }
 
@@ -33,5 +34,5 @@ int	ft_printhex(va_list args, int uppercase)
 	unsigned int	n;
 
 	n = va_arg(args, unsigned int);
-	return (ft_puthex_count(n, uppercase));
+	return (ft_hexcount(n, uppercase));
 }
